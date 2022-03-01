@@ -23,6 +23,7 @@
 		E525CD1227C4B9A400055C9D /* LikesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E525CD1127C4B9A400055C9D /* LikesCollectionViewCell.swift */; };
 		E525CD1627C54A0600055C9D /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E525CD1527C54A0600055C9D /* LikeButton.swift */; };
 		E525CD1927C59FCC00055C9D /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E525CD1827C59FCC00055C9D /* UIView+Extensions.swift */; };
+		E5C702E127CDEC5500AAC258 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C702E027CDEC5500AAC258 /* UINavigationController+Extensions.swift */; };
 		E5F1DBFB27CB5A8B00486E48 /* SpinnerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F1DBFA27CB5A8B00486E48 /* SpinnerCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		E525CD1127C4B9A400055C9D /* LikesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesCollectionViewCell.swift; sourceTree = "<group>"; };
 		E525CD1527C54A0600055C9D /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		E525CD1827C59FCC00055C9D /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		E5C702E027CDEC5500AAC258 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
 		E5F1DBFA27CB5A8B00486E48 /* SpinnerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				E525CD1827C59FCC00055C9D /* UIView+Extensions.swift */,
+				E5C702E027CDEC5500AAC258 /* UINavigationController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				E525CD0E27C4AEA300055C9D /* FeedCellType.swift in Sources */,
 				E525CD0327C4958B00055C9D /* FeedViewController.swift in Sources */,
 				E525CCED27C494F500055C9D /* SceneDelegate.swift in Sources */,
+				E5C702E127CDEC5500AAC258 /* UINavigationController+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
