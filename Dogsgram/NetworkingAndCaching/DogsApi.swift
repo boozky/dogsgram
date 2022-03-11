@@ -45,6 +45,7 @@ class DogsAPI {
     
     public var isFetchingData = false
     
+    /*
     func getDogs(breed: DogsBreed, pageSize: Int, completion: @escaping(Result<[[FeedCellType]], DogsError>) -> Void) {
         
         self.isFetchingData = true
@@ -65,5 +66,25 @@ class DogsAPI {
             }
         }
         dataTask.resume()
+    }
+     */
+    
+    func getDogs(breed: DogsBreed, pageSize: Int) async -> Result<[[FeedCellType]], DogsError> {
+        self.isFetchingData = true
+        
+        let url = Endpoint.randomDogs(breed: breed, pageSize: pageSize).url
+        
+        defer {
+            self.isFetchingData = false
+        }
+        
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            let dogsResponse = try JSONDecoder().decode(DogsResponse.self, from: data)
+            return .success(dogsResponse.getDogsCellViewModels())
+        }
+        catch {
+            return .failure(.canNotProcessData)
+        }
     }
 }

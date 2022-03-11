@@ -171,22 +171,25 @@ extension FeedViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func fetchDogs(additionalLoad: Bool = false) {
         guard !additionalLoad || !DogsAPI.shared.isFetchingData else { return }
         
+        DogsAPI.shared.isFetchingData = true
         DispatchQueue.main.async {[weak self] in
             self?.collectionView?.reloadData()
         }
         
-        DogsAPI.shared.getDogs(breed: breed, pageSize: pageSize, completion: {[weak self] result in
+        Task {
+            let result = await DogsAPI.shared.getDogs(breed: breed, pageSize: pageSize)
             switch result {
+                
+            case .success(let dogsViewModel):
+                self.viewModels.append(contentsOf: dogsViewModel)
             case .failure(let error):
                 print(error)
-            case .success(let dogsViewModels):
-                self?.viewModels.append(contentsOf: dogsViewModels)
             }
             
-            DispatchQueue.main.async {
+            DispatchQueue.main.async {[weak self] in
                 self?.collectionView?.reloadData()
             }
-        })
+        }
     }
 }
 
